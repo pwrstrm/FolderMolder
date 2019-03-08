@@ -77,7 +77,7 @@ Function Send-EWSMail
     $htmlBody.RemoveRange(0,5)
     $htmlBody.RemoveAt(($htmlBody.Count -1))
 
-    $htmlBodyBegin = gc -Path "D:\tsd\script_content\EWS_Email_Templates\TSD_Test_template_begin.html" -Encoding UTF8
+    $htmlBodyBegin = gc -Path "D:\FolderMolder\template_begin.html" -Encoding UTF8
     $htmlBodyMiddle = gc -Path "D:\FolderMolder\template.html" -Encoding UTF8
     $htmlBodyEnd = gc -Path "D:\FolderMolder\template_end.html" -Encoding UTF8
 
