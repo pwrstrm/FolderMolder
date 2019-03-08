@@ -1,0 +1,11 @@
+﻿{
+	"Foldername"	:
+	{
+        "Recursive" : "true",
+		"Permissions" : 
+        {
+			"Group123"	:	"Editor",
+			"User123"	:	"Contributor"
+		}
+	}
+}
