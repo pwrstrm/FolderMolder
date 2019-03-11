@@ -83,9 +83,9 @@ Function Send-EWSMail
     $htmlBody.RemoveRange(0,5)
     $htmlBody.RemoveAt(($htmlBody.Count -1))
 
-    $htmlBodyBegin = gc -Path "D:\FolderMolder\template_begin.html" -Encoding UTF8
-    $htmlBodyMiddle = gc -Path "D:\FolderMolder\template.html" -Encoding UTF8
-    $htmlBodyEnd = gc -Path "D:\FolderMolder\template_end.html" -Encoding UTF8
+    $htmlBodyBegin = gc -Path $msgTemplateBegin -Encoding UTF8
+    $htmlBodyMiddle = gc -Path $msgTemplateMiddle -Encoding UTF8
+    $htmlBodyEnd = gc -Path $msgTemplateEnd -Encoding UTF8
 
     $message.Body = New-Object Microsoft.Exchange.WebServices.Data.MessageBody
     $message.Body.BodyType = [Microsoft.Exchange.WebServices.Data.BodyType]::HTML
@@ -94,7 +94,7 @@ Function Send-EWSMail
     # Sender & Reciever
     $message.From = New-Object Microsoft.Exchange.WebServices.Data.EmailAddress($from)
     $message.Sender = New-Object Microsoft.Exchange.WebServices.Data.EmailAddress($from)
-    $message.ToRecipients.Add("se.sd.service.tools@cgi.com") | Out-Null
+    $message.ToRecipients.Add($to) | Out-Null
 
     # Sending Message
     $message.Send()
