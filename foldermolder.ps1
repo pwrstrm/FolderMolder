@@ -22,6 +22,12 @@ $mailboxAddress = "" # Mailbox to monitor
 $sendTo = "" # Address to send to
 $sendFrom = "" # Address to send from
 
+# Paths to html code for mail
+$msgTemplateBegin = ".\template_begin.html"
+$msgTemplateMiddle = ".\template_middle.html"
+$msgTemplateEnd = ".\template_end.html"
+
+
 # Path to log findings
 $logPath = "D:\FolderMolder\logs\"
 (Get-Date).ToString("yyyy-MM-dd HH:mm:ss") | Add-Content ($logPath + "runtime.txt")
